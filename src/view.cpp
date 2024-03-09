@@ -37,7 +37,7 @@ void View::inputError()
 
 void View::outputResult(std::string name, double value)
 {
-    std::cout << "  The cheapest PetShop is " << name << " with a price of R$"
+    std::cout << "  The cheapest PetShop is \"" << name << "\" with a price of R$"
               << std::fixed << std::setprecision(2) << value << "." << std::endl
               << std::endl;
 }
