@@ -14,7 +14,7 @@ Há uma camada de proteção simples via expressões regulares no input, o qual 
 Além dos detalhes supracitados, grande parte das informações fornecidas no enunciado foram tomadas como premissas de conhecimento do usuário, como PetShops presentes na base de dados, distâncias e preços. Mecanismos de manipulação dessas informações não foram implementados.
 
 ## Instruções
-Executáveis para Linux e para Windows estão disponíveis para execução imediata, mas o código fonte pode ser compilado por meio do comando $make, definido no Makefile fornecido.
+Executáveis para Linux (dtiLin) e para Windows (dtiWin) estão disponíveis para execução imediata, mas o código fonte pode ser compilado por meio do comando <$ make>, definido no Makefile fornecido. O executável resultado da compilação via Makefile será denominado "dti". O código é compatível tanto com Linux, quanto com Windows.
 
 Ao ser inicializado, o programa fornecerá instruções de uso para o usuário. Em particular, deverá ser fornecido um input no seguinte formato: DD/MM/YYYY S B, em que DD é um dia, MM, um mês, YYYY, um ano e S B as quantidades de cachorros pequenos e grandes, respectivamente.
 
