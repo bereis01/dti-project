@@ -1,4 +1,5 @@
-CXX = g++ # Compiler
+C = gcc # C Compiler
+CXX = g++ # C++ Compiler
 CXXFLAGS = -Wall # Flags
 
 # Directories
@@ -19,12 +20,15 @@ all : main
 
 main : $(TARGET)
 
-$(TARGET) : $(OBJS)
-	$(CXX) $(FLAGS) $(OBJS) -o $(TARGET) -lsqlite3
+$(TARGET) : $(OBJS) $(OBJ_DIR)/sqlite3.o
+	$(CXX) $(FLAGS) $(OBJS) $(OBJ_DIR)/sqlite3.o -o $(TARGET)
+
+$(OBJ_DIR)/sqlite3.o : $(SRC_DIR)/sqlite3.c $(INCLUDE_DIR)/sqlite3.h
+	$(C) $(FLAGS) -I $(INCLUDE_DIR) -c $< -o $@
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp $(INCLUDES)
 	$(CXX) $(FLAGS) -I $(INCLUDE_DIR) -c $< -o $@
 
 clean:
-	rm $(OBJS) $(TARGET)
+	rm $(OBJS) $(OBJ_DIR)/sqlite3.o $(TARGET)
 ##

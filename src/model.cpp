@@ -69,12 +69,20 @@ void Model::retrieveData()
 {
     // Opening database.
     sqlite3 *db;
-    if(sqlite3_open("db/petshops.db", &db)) { std::cout << "ERROR OPENING DATABASE!" << std::endl; exit(-1); };
+    if (sqlite3_open("db/petshops.db", &db))
+    {
+        std::cout << "ERROR OPENING DATABASE!" << std::endl;
+        exit(-1);
+    };
 
     // Querying info.
     std::stringstream *result = new std::stringstream;
     std::string query = "SELECT * FROM PETSHOP;";
-    if(sqlite3_exec(db, query.c_str(), queryResult, (void *)result, NULL)) { std::cout << "ERROR IN DATABASE QUERY!" << std::endl; exit(-1); };
+    if (sqlite3_exec(db, query.c_str(), queryResult, (void *)result, NULL))
+    {
+        std::cout << "ERROR IN DATABASE QUERY!" << std::endl;
+        exit(-1);
+    };
 
     // Storing info locally.
     char aux[1000];
@@ -93,7 +101,11 @@ void Model::retrieveData()
 
     // Cleaning and closing database.
     delete result;
-    if(sqlite3_close(db)) { std::cout << "ERROR IN DATABASE QUERY!" << std::endl; exit(-1); };
+    if (sqlite3_close(db))
+    {
+        std::cout << "ERROR IN DATABASE QUERY!" << std::endl;
+        exit(-1);
+    };
 }
 
 // Made by rathbhupendra.

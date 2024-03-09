@@ -1,7 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <regex>
-#include <sqlite3.h>
 #include "control.hpp"
 
 int main()
